@@ -1,2 +1,2 @@
 # tbr-jenkins
-Jenkins child-theme for Beans.
+Jenkins is a child-theme for Beans.

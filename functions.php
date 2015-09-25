@@ -1,19 +1,26 @@
 <?php
 
+// Include Beans
+require_once( get_template_directory() . '/lib/init.php' );
+
+// Remove Beans Default Styling
+remove_theme_support( 'beans-default-styling' );
+
+
 // Enqueue uikit assets
 beans_add_smart_action( 'beans_uikit_enqueue_scripts', 'jenkins_enqueue_uikit_assets', 5 );
 
 function jenkins_enqueue_uikit_assets() {
 
 	// Enqueue uikit overwrite theme folder
-	beans_uikit_enqueue_theme( 'jenkins', BEANS_THEME_PATH . 'less/uikit' );
+	beans_uikit_enqueue_theme( 'jenkins', get_stylesheet_directory_uri() . '/assets/less/uikit' );
 
 	// Add the theme style as a uikit fragment to have access to all the variables
-	beans_compiler_add_fragment( 'uikit', BEANS_THEME_PATH . 'less/style.less', 'less' );
+	beans_compiler_add_fragment( 'uikit', get_stylesheet_directory_uri() . '/assets/less/style.less', 'less' );
 
 }
 
-// Remove page post type comment support.
+// Remove page post type comment support
 beans_add_smart_action( 'init', 'jenkins_post_type_support' );
 
 function jenkins_post_type_support() {

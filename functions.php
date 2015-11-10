@@ -3,6 +3,7 @@
 // Include Beans
 require_once( get_template_directory() . '/lib/init.php' );
 
+
 // Remove Beans Default Styling
 remove_theme_support( 'beans-default-styling' );
 
@@ -20,6 +21,7 @@ function jenkins_enqueue_uikit_assets() {
 
 }
 
+
 // Remove page post type comment support
 beans_add_smart_action( 'init', 'jenkins_post_type_support' );
 
@@ -28,6 +30,7 @@ function jenkins_post_type_support() {
 	remove_post_type_support( 'page', 'comments' );
 
 }
+
 
 // Setup document fragements, markups and attributes
 beans_add_smart_action( 'beans_before_load_document', 'jenkins_setup_document' );
@@ -78,6 +81,7 @@ function jenkins_setup_document() {
 
 }
 
+
 // Modify beans layout (filter)
 beans_add_smart_action( 'beans_layout_grid_settings', 'jenkins_layout_grid_settings' );
 
@@ -90,6 +94,7 @@ function jenkins_layout_grid_settings( $layouts ) {
 	) );
 
 }
+
 
 // Modify beans post meta items (filter)
 beans_add_smart_action( 'beans_post_meta_items', 'jenkins_post_meta_items' );
@@ -116,6 +121,7 @@ function jenkins_post_meta_item_date_icon() {
 
 }
 
+
 // Add post meta item author icon
 beans_add_smart_action( 'beans_post_meta_item_categories_prepend_markup', 'jenkins_post_meta_item_categories_icon' );
 
@@ -126,6 +132,7 @@ function jenkins_post_meta_item_categories_icon() {
 
 }
 
+
 // Add post meta item comment icon
 beans_add_smart_action( 'beans_post_meta_item_comments_prepend_markup', 'jenkins_post_meta_item_comments_icon' );
 
@@ -135,6 +142,7 @@ function jenkins_post_meta_item_comments_icon() {
 	echo beans_close_markup( 'jenkins_post_meta_item_comments_icon', 'i' );
 
 }
+
 
 // Remove comment after note (filter)
 beans_add_smart_action( 'comment_form_defaults', 'jenkins_comment_form_defaults' );
@@ -147,6 +155,7 @@ function jenkins_comment_form_defaults( $args ) {
 
 }
 
+
 // Add avatar uikit circle class (filter)
 beans_add_smart_action( 'get_avatar', 'jenkins_avatar' );
 
@@ -156,6 +165,7 @@ function jenkins_avatar( $output ) {
 
 }
 
+
 // Modify the tags cloud widget
 beans_add_smart_action( 'wp_generate_tag_cloud', 'jenkins_widget_tags_cloud' );
 
@@ -164,6 +174,7 @@ function jenkins_widget_tags_cloud( $output ) {
 	return preg_replace( "#style='font-size:.+pt;'#", '', $output );
 
 }
+
 
 // Add footer content
 add_filter( 'beans_footer_credit_right_text_output', 'jenkins_footer' );

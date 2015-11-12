@@ -176,7 +176,7 @@ function jenkins_widget_tags_cloud( $output ) {
 }
 
 
-// Add footer content
+// Add footer content (filter)
 beans_add_smart_action( 'beans_footer_credit_right_text_output', 'jenkins_footer' );
 
 function jenkins_footer() { ?>

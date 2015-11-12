@@ -33,7 +33,7 @@ function jenkins_post_type_support() {
 
 
 // Setup document fragements, markups and attributes
-beans_add_smart_action( 'beans_before_load_document', 'jenkins_setup_document' );
+beans_add_smart_action( 'wp', 'jenkins_setup_document' );
 
 function jenkins_setup_document() {
 

@@ -183,4 +183,4 @@ function jenkins_footer() { ?>
 
   <a href="http://www.themebutler.com/themes/jenkins/" target="_blank" title="Jenkins theme for WordPress">Jenkins</a> theme for <a href="http://wordpress.org" target="_blank">WordPress</a>. Built-with <a href="http://www.getbeans.io/" title="Beans Framework for WordPress" target="_blank">Beans</a>.
 
-<? }
+<?php }
